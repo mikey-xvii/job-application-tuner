@@ -1,0 +1,22 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "cv-tuner",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "start"
+      ],
+      "port": 4321
+    },
+    {
+      "name": "cv-tuner-replay",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "replay"
+      ],
+      "port": 4322
+    }
+  ]
+}

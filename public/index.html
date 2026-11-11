@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CV Tuner</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23fbf9f3'/%3E%3Ctext x='32' y='47' font-family='Georgia,serif' font-size='46' font-weight='700' text-anchor='middle' fill='%2315130f'%3E%C2%A7%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,300..800;1,6..72,300..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <canvas id="glyphs" aria-hidden="true"></canvas>
+
+  <main class="sheet">
+    <!-- ── masthead: the site's own CV header ── -->
+    <header class="masthead">
+      <h1 class="name" id="name" aria-label="Curriculum Vitae">CURRICULUM VITAE</h1>
+      <p class="tagline">tailored for <span class="target" id="target"><span id="target-text"></span><svg viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M1 6 C 20 2, 40 9, 60 5 S 90 3, 99 6"/></svg></span><span class="caret"></span></p>
+      <div class="contact">
+        <span id="clock">localhost</span>
+        <span class="engine" id="engine"><span class="dot"></span><span id="engine-text">checking for Claude…</span></span>
+      </div>
+      <div class="rule"></div>
+      <div class="notice" id="notice" hidden></div>
+    </header>
+
+    <!-- ── I. baseline ── -->
+    <section class="sec" id="sec-base">
+      <h2 class="sec-title"><span class="num">I.</span>The Baseline <span class="aside">everything you’ve ever done, relevant or not</span></h2>
+      <div class="entry">
+        <div class="date"><span id="base-when">—</span><small>data/base-cv.md</small></div>
+        <div>
+          <div class="row"><b>Master CV</b><span class="loc" id="base-stats">…</span></div>
+          <div class="sub" id="base-sub">Claude picks from this every time.</div>
+          <ul class="toc" id="base-toc"></ul>
+          <div class="actions">
+            <button class="btn ghost small" id="base-edit">Edit</button>
+            <label class="link" for="base-file">replace with a .md file</label>
+            <input type="file" id="base-file" accept=".md,.markdown,.txt,text/markdown,text/plain" hidden>
+            <span class="muted" style="font-style:italic;font-size:14px">…or drop one anywhere on the page</span>
+            <button class="link" id="base-undo" hidden>undo last change</button>
+          </div>
+
+          <div class="addendum" id="addendum">
+            <span class="label">Add to the record</span>
+            <label class="field boxed"><textarea id="note" rows="3" aria-label="Something to add to your baseline"></textarea></label>
+            <div class="actions">
+              <button class="btn small" id="note-go">File it with Claude <span class="arrow">→</span></button>
+              <span class="note-hint">In your own words. Claude puts it in the right place in your format, and nothing is saved until you accept. <span class="kbd">⌘ ↵</span></span>
+            </div>
+            <div class="digest-status" id="digest-status" hidden><span class="spin">¶</span><span id="digest-label">Claude is filing it…</span><span class="t" id="digest-t">0.0s</span></div>
+            <div class="proposal" id="proposal" hidden></div>
+          </div>
+          <div class="base-editor" id="base-editor" hidden>
+            <label class="field boxed" style="margin-top:16px"><textarea id="base-text" spellcheck="false" aria-label="Baseline CV markdown"></textarea></label>
+            <div class="actions">
+              <button class="btn small" id="base-save">Save baseline</button>
+              <button class="link" id="base-cancel">cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── II. the role ── -->
+    <section class="sec" id="sec-role">
+      <div class="rule thin"></div>
+      <h2 class="sec-title"><span class="num">II.</span>The Role <span class="aside">LinkedIn or any job board</span></h2>
+      <div class="entry">
+        <div class="date"><span id="role-when">Paste</span><small id="role-small">a link to the posting</small></div>
+        <div>
+          <div id="mode-link">
+            <label class="field"><input id="url" type="url" autocomplete="off" spellcheck="false" placeholder="https://www.linkedin.com/jobs/view/…" aria-label="Job posting link"><span class="hint" id="url-hint"></span></label>
+            <button class="link" id="to-text" style="margin-top:8px">or paste the description instead</button>
+          </div>
+          <div id="mode-text" hidden>
+            <label class="field boxed"><textarea id="jd" rows="8" placeholder="Paste the full job description here…" aria-label="Job description"></textarea></label>
+            <button class="link" id="to-link" style="margin-top:8px">or use a link</button>
+          </div>
+          <div class="tailor-bar">
+            <label class="field notes"><span class="label">A word to Claude <span style="text-transform:none;letter-spacing:0;font-style:italic">(optional)</span></span><input id="notes" autocomplete="off" placeholder="e.g. lean into the Python and prototyping work"></label>
+            <button class="btn" id="go">Tailor my CV <span class="arrow">→</span></button>
+          </div>
+          <div id="job"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── III. the edit (live) ── -->
+    <section class="sec" id="sec-work" hidden>
+      <div class="rule thin"></div>
+      <h2 class="sec-title"><span class="num">III.</span>The Edit <span class="aside" id="work-aside">in progress</span></h2>
+      <div class="progress" id="progress"><i></i></div>
+      <div class="work-grid">
+        <div id="stages"></div>
+        <div class="marginalia" id="marginalia"><div class="head">Claude’s margin notes</div></div>
+      </div>
+      <div class="error" id="error" hidden></div>
+    </section>
+
+    <!-- ── IV. the result ── -->
+    <section class="sec" id="sec-result" hidden>
+      <div class="rule thin"></div>
+      <h2 class="sec-title"><span class="num">IV.</span>The Result <span class="aside" id="result-aside"></span></h2>
+      <div class="result-grid">
+        <div class="paper-wrap">
+          <div class="paper" id="paper"><iframe id="frame" title="Tailored CV preview"></iframe></div>
+          <div class="stamp" id="stamp">Tailored<small id="stamp-date"></small></div>
+          <div class="paper-meta"><span id="paper-meta-l"></span><span id="paper-meta-r">A4 · 1 page</span></div>
+          <div class="edit-bar" id="edit-bar" hidden>
+            <span id="edit-count">Click any line on the page to edit it.</span>
+            <button class="btn small" id="edit-save" disabled>Save edits</button>
+            <button class="link" id="edit-cancel">done</button>
+          </div>
+        </div>
+        <div>
+          <div class="score"><span class="big" id="fit">0</span><span class="of">/ 100 fit</span><span class="verdict" id="verdict"></span></div>
+          <div class="meter"><div class="ticks"></div><div class="needle" id="needle"></div></div>
+          <p class="strategy" id="strategy"></p>
+          <div class="actions">
+            <a class="btn" id="dl" href="#" download>Download PDF <span class="arrow">↓</span></a>
+            <a class="link" id="open-pdf" href="#" target="_blank" rel="noopener">open</a>
+            <button class="link" id="edit-toggle">edit text</button>
+          </div>
+          <div class="refine">
+            <label class="field"><span class="label">Ask for a change</span><input id="refine" autocomplete="off" placeholder="e.g. make the first role more about prototyping ↵"></label>
+          </div>
+          <div class="h3">The requirements</div>
+          <ul class="reqs" id="reqs"></ul>
+          <div class="h3">Editor’s notes</div>
+          <ul class="notes-list" id="changes"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── V. archive ── -->
+    <section class="sec archive" id="sec-archive">
+      <div class="rule thin"></div>
+      <h2 class="sec-title"><span class="num">V.</span>The Archive <span class="aside" id="archive-aside"></span></h2>
+      <div id="archive"><p class="empty">Nothing filed yet. Your first tailored CV will be filed here.</p></div>
+    </section>
+
+    <footer class="foot">
+      <div class="rule thin"></div>
+      <p class="refs">References available on request.</p>
+      <p class="colophon">Set in Newsreader &amp; Instrument Serif · your CV in Times New Roman 9.12pt · written by Claude · typeset by Chrome · <span class="kbd">⌘ ↵</span> to tailor</p>
+    </footer>
+  </main>
+
+  <div class="ticker" aria-hidden="true"><div class="track" id="ticker"></div></div>
+  <div class="dropzone" id="dropzone" hidden>Drop to replace your baseline</div>
+
+  <script src="/app.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+{
+  "analysis": {
+    "company": "Meridian Capital",
+    "role": "Business Analyst, Operations Transformation",
+    "location": "Hong Kong SAR",
+    "summary": "They want an analyst who can turn messy operations into clear processes, controls and quick prototypes, and bring senior stakeholders along.",
+    "keywords": [
+      "Process mapping",
+      "Controls & exceptions",
+      "Operating model",
+      "Prototyping",
+      "Business case",
+      "Financial services",
+      "Stakeholder management",
+      "SQL",
+      "Python"
+    ],
+    "requirements": [
+      {
+        "requirement": "Process mapping with controls and exceptions",
+        "evidence": "Mapped trade settlement processes, controls and exception paths across four teams",
+        "strength": "strong"
+      },
+      {
+        "requirement": "Target operating model design",
+        "evidence": "Designed an interim operating model for a payments team",
+        "strength": "strong"
+      },
+      {
+        "requirement": "Business cases with measurable outcomes",
+        "evidence": "Onboarding automation case modelling a 30% cut in manual review time",
+        "strength": "strong"
+      },
+      {
+        "requirement": "Financial services experience",
+        "evidence": "Bank and payments clients at Northbridge; asset management internship",
+        "strength": "strong"
+      },
+      {
+        "requirement": "Prototyping with AI-enabled tools",
+        "evidence": "Claude Code and Figma listed; no prototype described in the baseline",
+        "strength": "partial"
+      },
+      {
+        "requirement": "2–4 years in transformation",
+        "evidence": "About three years including internships",
+        "strength": "partial"
+      }
+    ],
+    "fit_score": 78,
+    "strategy": "You are positioned as a transformation consultant who already maps processes, controls and operating models in financial services. Your build tools lead the skills section, but prepare a concrete prototype example for the interview."
+  },
+  "cv": {
+    "name": "ALEX CHAN",
+    "contact": [
+      "+852 0000 0000",
+      "alex.chan@example.com"
+    ],
+    "sections": [
+      {
+        "title": "WORK EXPERIENCE",
+        "kind": "entries",
+        "skills": [],
+        "entries": [
+          {
+            "date": "2023 - Present",
+            "organisation": "Northbridge Consulting",
+            "location": "Hong Kong SAR",
+            "subtitle": "Senior Consultant, Financial Services Transformation",
+            "subtitle_style": "bold",
+            "details": [],
+            "bullets": [
+              "Mapped end-to-end trade settlement processes for a regional bank, documenting controls, hand-offs and exception paths across four operations teams",
+              "Designed an interim operating model for a payments team, defining ownership of data, controls and escalation routes",
+              "Built a business case for automating client onboarding checks, modelling a 30% reduction in manual review time",
+              "Prepared steering committee packs and presented progress to Director-level stakeholders every fortnight"
+            ]
+          },
+          {
+            "date": "2022",
+            "organisation": "Harbourview Asset Management",
+            "location": "Singapore",
+            "subtitle": "Investment Analyst Intern",
+            "subtitle_style": "bold",
+            "details": [],
+            "bullets": [
+              "Built sector models in Python and Excel covering 15 listed industrials companies",
+              "Co-wrote a sector initiation note, including DCF and trading comparables valuation"
+            ]
+          },
+          {
+            "date": "2021",
+            "organisation": "Lumen Analytics",
+            "location": "London, UK",
+            "subtitle": "Data Strategy Intern",
+            "subtitle_style": "bold",
+            "details": [],
+            "bullets": [
+              "Cleaned and analysed customer churn data in R, building a logistic regression model to flag at-risk accounts",
+              "Produced 10+ client-ready charts and briefing notes for retail and telecoms clients"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "EDUCATION",
+        "kind": "entries",
+        "skills": [],
+        "entries": [
+          {
+            "date": "2021 – 2022",
+            "organisation": "Kingsbridge University",
+            "location": "London, UK",
+            "subtitle": "MSc Business Analytics",
+            "subtitle_style": "italic",
+            "details": [
+              "Graduated with Distinction"
+            ],
+            "bullets": [
+              "Dissertation: forecasting branch footfall with time-series models for a high-street bank",
+              "Modules: Optimisation, Operations Management, Machine Learning, Data Visualisation"
+            ]
+          },
+          {
+            "date": "2018 – 2021",
+            "organisation": "Wexford University",
+            "location": "Manchester, UK",
+            "subtitle": "BSc Economics",
+            "subtitle_style": "italic",
+            "details": [
+              "Graduated with First Class Honours"
+            ],
+            "bullets": [
+              "Modules: Econometrics, Statistics, Corporate Finance, Behavioural Economics"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "ADDITIONAL SKILLS",
+        "kind": "skills",
+        "entries": [],
+        "skills": [
+          {
+            "label": "Technical",
+            "text": "Claude Code, Figma, SQL (Intermediate), Python (Advanced), Microsoft Excel (Advanced), R (Intermediate), Tableau"
+          },
+          {
+            "label": "Languages",
+            "text": "English (Native), Cantonese (Native), Mandarin (Professional)"
+          },
+          {
+            "label": "Certifications",
+            "text": "PRINCE2 Foundation"
+          },
+          {
+            "label": "Hobbies/Interests",
+            "text": "Long-distance running; film photography; board games"
+          }
+        ]
+      }
+    ]
+  },
+  "changes": [
+    "Led with the settlement-process mapping, the closest match to their controls and exceptions focus",
+    "Moved the operating model bullet up to second to answer the target operating model ask",
+    "Put Claude Code, Figma and SQL at the front of Technical skills",
+    "Cut the workshop and morning-meeting bullets, which don't help a transformation role"
+  ],
+  "file_label": "Meridian"
+}

@@ -1,0 +1,8 @@
+node_modules/
+.env
+data/runs/
+data/.tmp/
+data/.chrome-profile/
+.DS_Store
+data/base-cv.md
+data/base-history/

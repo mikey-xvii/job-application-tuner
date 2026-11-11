@@ -1,0 +1,16 @@
+{
+  "source": "example",
+  "url": "https://example.com/jobs/business-analyst-transformation",
+  "originalUrl": "https://example.com/jobs/business-analyst-transformation",
+  "title": "Business Analyst, Operations Transformation",
+  "company": "Meridian Capital",
+  "location": "Hong Kong SAR",
+  "posted": "2 days ago",
+  "applicants": "48 applicants",
+  "criteria": [
+    { "label": "Seniority level", "value": "Associate" },
+    { "label": "Employment type", "value": "Full-time" },
+    { "label": "Industries", "value": "Financial Services" }
+  ],
+  "description": "Meridian Capital is a fictional asset manager used as sample data for CV Tuner.\nAbout the role\nOur Operations Transformation team redesigns how work gets done across the firm. You will turn ambiguous operational problems into clear process designs, controls and working prototypes.\nWhat you'll do\n• Map current-state processes, including controls, hand-offs and exception paths\n• Define target operating models covering ownership, governance and escalation\n• Build quick prototypes with modern and AI-enabled tools to test ideas with users\n• Write business cases with measurable outcomes\n• Communicate progress to senior stakeholders and build consensus across teams\nWhat you'll bring\n• 2–4 years in consulting, transformation or operations change\n• Experience in financial services\n• Strong analytical skills (Excel, SQL or Python)\n• Clear, confident communication"
+}
